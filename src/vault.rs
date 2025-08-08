@@ -4,6 +4,9 @@ use std::fs::{self, File};
 use std::io::{self, Write, Read};
 use std::path::PathBuf;
 
+use crate::crypto::{generate_key, encrypt, decrypt};
+use serde::{Serialize, Deserialize};
+
 const VAULT_FILENAME: &str = ".rust_passman.vault.json";
 
 /// Get path to the vault file
